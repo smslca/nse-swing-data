@@ -9,24 +9,9 @@ Can also be run locally: python3 fetch_data.py
 """
 
 import yfinance as yf
-import requests
 import json
 import os
 from datetime import datetime
-
-# ── BROWSER SESSION (bypasses Yahoo Finance bot detection) ────────────
-def get_session():
-    s = requests.Session()
-    s.headers.update({
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
-                      'AppleWebKit/537.36 (KHTML, like Gecko) '
-                      'Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-    })
-    return s
-
-SESSION = get_session()
 
 # ── FIXED SYMBOLS ─────────────────────────────────────────────────────
 INDICES = [
@@ -66,12 +51,12 @@ def ema_status(price, ema):
 # ── FETCH ONE SYMBOL ──────────────────────────────────────────────────
 def fetch_symbol(symbol):
     try:
-        ticker = yf.Ticker(symbol, session=SESSION)
-        df = ticker.history(period="1y", interval="1d", auto_adjust=True)
+        df = yf.download(symbol, period="1y", interval="1d",
+                         progress=False, auto_adjust=True)
         if df.empty:
             return None
 
-        closes = df["Close"].dropna().squeeze()
+        closes = df["Close"].dropna()
         if len(closes) < 21:
             return None
 
