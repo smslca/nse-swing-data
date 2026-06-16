@@ -18,7 +18,7 @@ from datetime import datetime
 INDICES = [
     ("Nifty 50",        "^NSEI"),
     ("Bank Nifty",      "^NSEBANK"),
-    ("Nifty Midcap150", "^CNXMID"),   # ^CNXMDCP is delisted on Yahoo
+    # Nifty Midcap — Yahoo Finance symbols keep changing; add back when confirmed
 ]
 
 COMMODITIES = [
