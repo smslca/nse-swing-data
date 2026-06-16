@@ -1,0 +1,33 @@
+name: Fetch NSE Market Data
+
+on:
+  schedule:
+    - cron: '30 10 * * 1-5'   # 4:00 PM IST (Mon–Fri). IST = UTC+5:30
+  workflow_dispatch:            # Lets you trigger manually from GitHub UI anytime
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write           # Needed to commit market_data.json back to repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install yfinance pandas
+
+      - name: Fetch market data
+        run: python fetch_data.py
+
+      - name: Commit updated market_data.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update market data [skip ci]"
+          file_pattern: market_data.json

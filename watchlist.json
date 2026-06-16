@@ -1,0 +1,16 @@
+[
+  {
+    "name":   "RELIANCE",
+    "symbol": "RELIANCE.NS",
+    "sector": "Energy",
+    "setup":  "50EMA",
+    "notes":  "Testing 50 EMA after consolidation"
+  },
+  {
+    "name":   "HDFCBANK",
+    "symbol": "HDFCBANK.NS",
+    "sector": "Banking",
+    "setup":  "21EMA",
+    "notes":  ""
+  }
+]
