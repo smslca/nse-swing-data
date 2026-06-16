@@ -9,15 +9,16 @@ Can also be run locally: python3 fetch_data.py
 """
 
 import yfinance as yf
+import pandas as pd
 import json
 import os
 from datetime import datetime
 
 # ── FIXED SYMBOLS ─────────────────────────────────────────────────────
 INDICES = [
-    ("Nifty 50",         "^NSEI"),
-    ("Bank Nifty",       "^NSEBANK"),
-    ("Nifty Midcap100",  "^CNXMDCP"),
+    ("Nifty 50",        "^NSEI"),
+    ("Bank Nifty",      "^NSEBANK"),
+    ("Nifty Midcap150", "^CNXMID"),   # ^CNXMDCP is delisted on Yahoo
 ]
 
 COMMODITIES = [
@@ -27,7 +28,7 @@ COMMODITIES = [
 
 # ── LOAD WATCHLIST FROM JSON ───────────────────────────────────────────
 def load_watchlist():
-    path = os.path.join(os.path.dirname(__file__), "watchlist.json")
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "watchlist.json")
     if not os.path.exists(path):
         print("  watchlist.json not found — skipping stocks")
         return []
@@ -51,13 +52,21 @@ def ema_status(price, ema):
 # ── FETCH ONE SYMBOL ──────────────────────────────────────────────────
 def fetch_symbol(symbol):
     try:
-        df = yf.download(symbol, period="1y", interval="1d",
-                         progress=False, auto_adjust=True)
+        # Use Ticker.history() — always returns plain (non-MultiIndex) columns
+        ticker = yf.Ticker(symbol)
+        df = ticker.history(period="1y", interval="1d", auto_adjust=True)
         if df.empty:
+            print(f"    WARN {symbol}: empty dataframe")
             return None
 
-        closes = df["Close"].dropna()
+        # Defensively handle both Series and single-column DataFrame
+        close_col = df["Close"]
+        if isinstance(close_col, pd.DataFrame):
+            close_col = close_col.iloc[:, 0]
+        closes = close_col.dropna()
+
         if len(closes) < 21:
+            print(f"    WARN {symbol}: only {len(closes)} data points")
             return None
 
         price   = float(closes.iloc[-1])
@@ -68,11 +77,11 @@ def fetch_symbol(symbol):
         e200    = calc_ema(closes, 200)
 
         return {
-            "price":    round(price, 2),
+            "price":     round(price, 2),
             "changePct": round(chg_pct, 2),
-            "ema21":    round(e21,  2) if e21  else None,
-            "ema50":    round(e50,  2) if e50  else None,
-            "ema200":   round(e200, 2) if e200 else None,
+            "ema21":     round(e21,  2) if e21  else None,
+            "ema50":     round(e50,  2) if e50  else None,
+            "ema200":    round(e200, 2) if e200 else None,
             "status21":  ema_status(price, e21),
             "status50":  ema_status(price, e50),
             "status200": ema_status(price, e200),
@@ -85,11 +94,11 @@ def fetch_symbol(symbol):
 def main():
     now = datetime.utcnow()
     data = {
-        "fetchedAt":   now.strftime("%d %b %Y %H:%M UTC"),
-        "fetchedAtIST": (now.strftime("%d %b %Y") + " (IST ≈ UTC+5:30)"),
-        "indices":     {},
-        "commodities": {},
-        "watchlist":   [],
+        "fetchedAt":    now.strftime("%d %b %Y %H:%M UTC"),
+        "fetchedAtIST": now.strftime("%d %b %Y") + " (IST ≈ UTC+5:30)",
+        "indices":      {},
+        "commodities":  {},
+        "watchlist":    [],
     }
 
     print("\n📊 Indices")
@@ -98,7 +107,7 @@ def main():
         if r:
             data["indices"][name] = r
             icon = "✅" if r["status21"] == "above" else "⚠️ " if r["status21"] == "near" else "🔴"
-            print(f"  {icon} {name}: ₹{r['price']:,.0f} | 21EMA ₹{r['ema21']:,.0f} ({r['changePct']:+.2f}%)")
+            print(f"  {icon} {name}: {r['price']:,.0f} | 21EMA {r['ema21']:,.0f} ({r['changePct']:+.2f}%)")
         else:
             print(f"  ✗ {name}: no data")
 
@@ -107,7 +116,7 @@ def main():
         r = fetch_symbol(sym)
         if r:
             data["commodities"][name] = r
-            print(f"  {name}: ${r['price']:,.2f} ({r['changePct']:+.2f}%)")
+            print(f"  {name}: {r['price']:,.2f} ({r['changePct']:+.2f}%)")
         else:
             print(f"  ✗ {name}: no data")
 
@@ -122,22 +131,22 @@ def main():
             r["setup"]  = w.get("setup", "21EMA")
             r["notes"]  = w.get("notes", "")
             # Flag stocks near their target EMA
-            target_status = r.get(f"status{r['setup'].replace('EMA','')}", r["status21"])
+            ema_key = f"status{r['setup'].replace('EMA', '')}"
+            target_status = r.get(ema_key, r["status21"])
             r["alert"] = (target_status == "near")
             data["watchlist"].append(r)
             icon = "🎯" if r["alert"] else ("✅" if r["status21"] == "above" else "🔴")
-            print(f"  {icon} {w['name']}: ₹{r['price']:,.1f} | {r['setup']} {target_status}")
+            print(f"  {icon} {w['name']}: {r['price']:,.1f} | {r['setup']} {target_status}")
         else:
             print(f"  ✗ {w['name']}: no data")
 
-    # Derive overall market signal: Nifty above 21 EMA = GO
+    # Market signal: Nifty above 21 EMA = GO
     nifty = data["indices"].get("Nifty 50")
     data["marketSignal"] = "GO" if nifty and nifty["status21"] != "below" else "NO-GO"
     data["alertCount"]   = sum(1 for s in data["watchlist"] if s.get("alert"))
     print(f"\n📡 Market Signal: {data['marketSignal']}")
     print(f"🎯 Stocks near EMA: {data['alertCount']}")
 
-    # Write JSON
     out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "market_data.json")
     with open(out_path, "w") as f:
         json.dump(data, f, indent=2)
