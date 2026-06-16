@@ -1,9 +1,84 @@
 {
-  "fetchedAt": "16 Jun 2026 16:39 UTC",
+  "fetchedAt": "16 Jun 2026 17:35 UTC",
   "fetchedAtIST": "16 Jun 2026 (IST \u2248 UTC+5:30)",
-  "indices": {},
-  "commodities": {},
-  "watchlist": [],
-  "marketSignal": "NO-GO",
-  "alertCount": 0
+  "indices": {
+    "Nifty 50": {
+      "price": 23989.15,
+      "changePct": 1.55,
+      "ema21": 23561.64,
+      "ema50": 23778.85,
+      "ema200": 24576.1,
+      "status21": "near",
+      "status50": "near",
+      "status200": "below"
+    },
+    "Bank Nifty": {
+      "price": 57297.15,
+      "changePct": 0.85,
+      "ema21": 54984.66,
+      "ema50": 55148.74,
+      "ema200": 56458.17,
+      "status21": "above",
+      "status50": "above",
+      "status200": "near"
+    }
+  },
+  "commodities": {
+    "Gold": {
+      "price": 4350.6,
+      "changePct": 0.52,
+      "ema21": 4390.25,
+      "ema50": 4523.92,
+      "ema200": 4394.25,
+      "status21": "near",
+      "status50": "below",
+      "status200": "near"
+    },
+    "Crude Oil": {
+      "price": 75.13,
+      "changePct": -6.96,
+      "ema21": 89.99,
+      "ema50": 91.88,
+      "ema200": 79.89,
+      "status21": "below",
+      "status50": "below",
+      "status200": "below"
+    }
+  },
+  "watchlist": [
+    {
+      "price": 1328.8,
+      "changePct": 1.67,
+      "ema21": 1312.22,
+      "ema50": 1340.35,
+      "ema200": 1397.65,
+      "status21": "near",
+      "status50": "near",
+      "status200": "below",
+      "name": "RELIANCE",
+      "symbol": "RELIANCE.NS",
+      "sector": "Energy",
+      "setup": "50EMA",
+      "notes": "Testing 50 EMA after consolidation",
+      "alert": true
+    },
+    {
+      "price": 784.9,
+      "changePct": 0.97,
+      "ema21": 761.28,
+      "ema50": 778.17,
+      "ema200": 868.85,
+      "status21": "above",
+      "status50": "near",
+      "status200": "below",
+      "name": "HDFCBANK",
+      "symbol": "HDFCBANK.NS",
+      "sector": "Banking",
+      "setup": "21EMA",
+      "notes": "",
+      "alert": false
+    }
+  ],
+  "marketSignal": "GO",
+  "alertCount": 1
 }
