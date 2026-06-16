@@ -14,6 +14,12 @@ import json
 import os
 from datetime import datetime
 
+try:
+    from curl_cffi import requests as crequests
+    SESSION = crequests.Session(impersonate="chrome")
+except ImportError:
+    SESSION = None
+
 # ── BROAD INDICES ──────────────────────────────────────────────────────
 INDICES = [
     ("Nifty 50",    "^NSEI"),
@@ -35,13 +41,13 @@ SECTORS = [
     ("Smallcap", "^CNXSC"),
 ]
 
-# ── COMMODITIES ──────────────────────────────────────────────────────
+# ── COMMODITIES ────────────────────────────────────────────────────────
 COMMODITIES = [
     ("Gold",      "GC=F"),
     ("Crude Oil", "CL=F"),
 ]
 
-# ── LOAD WATCHLIST ────────────────────────────────────────────────────
+# ── LOAD WATCHLIST ─────────────────────────────────────────────────────
 def load_watchlist():
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "watchlist.json")
     if not os.path.exists(path):
@@ -50,7 +56,7 @@ def load_watchlist():
     with open(path) as f:
         return json.load(f)
 
-# ── EMA HELPERS ─────────────────────────────────────────────────────
+# ── EMA HELPERS ────────────────────────────────────────────────────────
 def calc_ema(series, period):
     if len(series) < period:
         return None
@@ -67,7 +73,7 @@ def ema_status(price, ema):
 # ── FETCH ONE SYMBOL ──────────────────────────────────────────────────
 def fetch_symbol(symbol):
     try:
-        ticker = yf.Ticker(symbol)
+        ticker = yf.Ticker(symbol, session=SESSION)
         df = ticker.history(period="1y", interval="1d", auto_adjust=True)
         if df.empty:
             return None
