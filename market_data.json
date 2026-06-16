@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "16 Jun 2026 18:34 UTC",
+  "fetchedAt": "16 Jun 2026 18:47 UTC",
   "fetchedAtIST": "16 Jun 2026 (IST \u2248 UTC+5:30)",
   "indices": {
     "Nifty 50": {
@@ -127,20 +127,20 @@
   },
   "commodities": {
     "Gold": {
-      "price": 4361.5,
-      "changePct": 0.77,
-      "ema21": 4391.24,
-      "ema50": 4524.35,
-      "ema200": 4394.36,
+      "price": 4362.4,
+      "changePct": 0.79,
+      "ema21": 4391.33,
+      "ema50": 4524.39,
+      "ema200": 4394.37,
       "status21": "near",
       "status50": "below",
       "status200": "near"
     },
     "Crude Oil": {
-      "price": 75.2,
-      "changePct": -6.87,
-      "ema21": 89.99,
-      "ema50": 91.88,
+      "price": 75.46,
+      "changePct": -6.55,
+      "ema21": 90.02,
+      "ema50": 91.89,
       "ema200": 79.89,
       "status21": "below",
       "status50": "below",
