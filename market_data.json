@@ -1,23 +1,23 @@
 {
-  "fetchedAt": "20 Aug 2026 10:57 UTC",
-  "fetchedAtIST": "20 Aug 2026 (IST \u2248 UTC+5:30)",
+  "fetchedAt": "21 Aug 2026 10:58 UTC",
+  "fetchedAtIST": "21 Aug 2026 (IST \u2248 UTC+5:30)",
   "indices": {
     "Nifty 50": {
-      "price": 24231.85,
-      "changePct": 0.64,
-      "ema21": 24293.75,
-      "ema50": 24176.16,
-      "ema200": 24454.73,
+      "price": 24252.0,
+      "changePct": 0.08,
+      "ema21": 24297.02,
+      "ema50": 24190.81,
+      "ema200": 24448.66,
       "status21": "near",
       "status50": "near",
       "status200": "near"
     },
     "Bank Nifty": {
-      "price": 57495.9,
-      "changePct": 0.45,
-      "ema21": 57504.22,
-      "ema50": 57168.73,
-      "ema200": 56839.84,
+      "price": 57761.95,
+      "changePct": 0.46,
+      "ema21": 57525.43,
+      "ema50": 57223.22,
+      "ema200": 56870.84,
       "status21": "near",
       "status50": "near",
       "status200": "near"
@@ -25,41 +25,101 @@
   },
   "sectors": {
     "IT": {
-      "price": 30673.05,
-      "changePct": 0.79,
-      "ema21": 30531.08,
-      "ema50": 29840.97,
-      "ema200": 31552.86,
+      "price": 30532.25,
+      "changePct": -0.46,
+      "ema21": 30579.45,
+      "ema50": 29914.74,
+      "ema200": 31491.1,
       "status21": "near",
       "status50": "above",
       "status200": "below"
     },
-    "Pharma": {
-      "price": 26416.0,
-      "changePct": 0.39,
-      "ema21": 26290.27,
-      "ema50": 25685.96,
-      "ema200": 23940.2,
-      "status21": "near",
-      "status50": "above",
-      "status200": "above"
-    },
-    "Metal": {
-      "price": 13060.25,
-      "changePct": 5.01,
-      "ema21": 12683.53,
-      "ema50": 12730.73,
-      "ema200": 11834.59,
+    "Auto": {
+      "price": 29124.6,
+      "changePct": 7.47,
+      "ema21": 26972.82,
+      "ema50": 26659.9,
+      "ema200": 26518.04,
       "status21": "above",
       "status50": "above",
       "status200": "above"
     },
+    "Pharma": {
+      "price": 26359.75,
+      "changePct": -0.21,
+      "ema21": 26324.52,
+      "ema50": 25779.7,
+      "ema200": 24047.68,
+      "status21": "near",
+      "status50": "above",
+      "status200": "above"
+    },
+    "FMCG": {
+      "price": 47510.95,
+      "changePct": -2.54,
+      "ema21": 48979.3,
+      "ema50": 49305.08,
+      "ema200": 51334.72,
+      "status21": "below",
+      "status50": "below",
+      "status200": "below"
+    },
+    "Metal": {
+      "price": 13172.6,
+      "changePct": 5.92,
+      "ema21": 12693.74,
+      "ema50": 12735.13,
+      "ema200": 11835.26,
+      "status21": "above",
+      "status50": "above",
+      "status200": "above"
+    },
+    "Realty": {
+      "price": 911.6,
+      "changePct": -0.77,
+      "ema21": 880.15,
+      "ema50": 838.17,
+      "ema200": 831.28,
+      "status21": "above",
+      "status50": "above",
+      "status200": "above"
+    },
+    "Energy": {
+      "price": 38252.2,
+      "changePct": -2.61,
+      "ema21": 39347.9,
+      "ema50": 39371.27,
+      "ema200": 37532.42,
+      "status21": "below",
+      "status50": "below",
+      "status200": "near"
+    },
     "PSU Bank": {
-      "price": 8616.65,
-      "changePct": 2.8,
-      "ema21": 8420.48,
-      "ema50": 8436.96,
-      "ema200": 8321.23,
+      "price": 8620.0,
+      "changePct": 2.84,
+      "ema21": 8420.78,
+      "ema50": 8437.09,
+      "ema200": 8318.4,
+      "status21": "above",
+      "status50": "above",
+      "status200": "above"
+    },
+    "Infra": {
+      "price": 9362.95,
+      "changePct": -0.15,
+      "ema21": 9377.02,
+      "ema50": 9347.75,
+      "ema200": 9298.61,
+      "status21": "near",
+      "status50": "near",
+      "status200": "near"
+    },
+    "Media": {
+      "price": 1612.7,
+      "changePct": 6.0,
+      "ema21": 1507.92,
+      "ema50": 1477.77,
+      "ema200": 1468.55,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -67,21 +127,21 @@
   },
   "commodities": {
     "Gold": {
-      "price": 4546.9,
-      "changePct": 1.28,
-      "ema21": 4299.16,
-      "ema50": 4267.31,
-      "ema200": 4311.18,
+      "price": 4648.5,
+      "changePct": 2.93,
+      "ema21": 4328.39,
+      "ema50": 4281.11,
+      "ema200": 4313.71,
       "status21": "above",
       "status50": "above",
       "status200": "above"
     },
     "Crude Oil": {
-      "price": 86.73,
-      "changePct": 1.05,
-      "ema21": 82.45,
-      "ema50": 82.48,
-      "ema200": 79.09,
+      "price": 86.89,
+      "changePct": -1.07,
+      "ema21": 82.94,
+      "ema50": 82.7,
+      "ema200": 79.21,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -89,11 +149,11 @@
   },
   "watchlist": [
     {
-      "price": 1313.2,
-      "changePct": 0.17,
-      "ema21": 1310.79,
-      "ema50": 1312.64,
-      "ema200": 1362.31,
+      "price": 1316.0,
+      "changePct": 0.21,
+      "ema21": 1311.07,
+      "ema50": 1312.28,
+      "ema200": 1362.11,
       "status21": "near",
       "status50": "near",
       "status200": "below",
@@ -105,12 +165,12 @@
       "alert": true
     },
     {
-      "price": 725.05,
-      "changePct": 0.7,
-      "ema21": 739.96,
-      "ema50": 757.22,
-      "ema200": 824.4,
-      "status21": "below",
+      "price": 726.95,
+      "changePct": 0.26,
+      "ema21": 738.29,
+      "ema50": 755.46,
+      "ema200": 822.81,
+      "status21": "near",
       "status50": "below",
       "status200": "below",
       "name": "HDFCBANK",
@@ -118,9 +178,9 @@
       "sector": "Banking",
       "setup": "21EMA",
       "notes": "",
-      "alert": false
+      "alert": true
     }
   ],
   "marketSignal": "GO",
-  "alertCount": 1
+  "alertCount": 2
 }
