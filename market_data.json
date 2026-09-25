@@ -1,45 +1,45 @@
 {
-  "fetchedAt": "24 Sep 2026 15:24 UTC",
-  "fetchedAtIST": "24 Sep 2026 (IST \u2248 UTC+5:30)",
+  "fetchedAt": "25 Sep 2026 15:26 UTC",
+  "fetchedAtIST": "25 Sep 2026 (IST \u2248 UTC+5:30)",
   "indices": {
     "Nifty 50": {
-      "price": 23063.1,
-      "changePct": -1.64,
-      "ema21": 23599.7,
-      "ema50": 23851.65,
-      "ema200": 24296.79,
-      "status21": "below",
+      "price": 23140.5,
+      "changePct": 0.34,
+      "ema21": 23534.39,
+      "ema50": 23803.84,
+      "ema200": 24261.69,
+      "status21": "near",
       "status50": "below",
       "status200": "below"
     },
     "Bank Nifty": {
-      "price": 55438.5,
-      "changePct": -1.96,
-      "ema21": 56664.79,
-      "ema50": 56935.47,
-      "ema200": 56829.66,
-      "status21": "below",
+      "price": 55580.4,
+      "changePct": 0.26,
+      "ema21": 56525.52,
+      "ema50": 56854.52,
+      "ema200": 56798.84,
+      "status21": "near",
       "status50": "below",
       "status200": "below"
     }
   },
   "sectors": {
     "IT": {
-      "price": 28208.85,
-      "changePct": -0.44,
-      "ema21": 29508.33,
-      "ema50": 29758.96,
-      "ema200": 31097.81,
+      "price": 28160.9,
+      "changePct": -0.17,
+      "ema21": 29304.79,
+      "ema50": 29651.03,
+      "ema200": 31006.02,
       "status21": "below",
       "status50": "below",
       "status200": "below"
     },
     "Pharma": {
-      "price": 27028.7,
-      "changePct": -0.45,
-      "ema21": 26678.61,
-      "ema50": 26323.75,
-      "ema200": 24573.02,
+      "price": 27003.0,
+      "changePct": -0.1,
+      "ema21": 26729.74,
+      "ema50": 26372.97,
+      "ema200": 24602.91,
       "status21": "near",
       "status50": "above",
       "status200": "above"
@@ -47,21 +47,21 @@
   },
   "commodities": {
     "Gold": {
-      "price": 4280.5,
-      "changePct": -0.88,
-      "ema21": 4399.27,
-      "ema50": 4384.57,
-      "ema200": 4387.97,
-      "status21": "below",
-      "status50": "below",
-      "status200": "below"
+      "price": 4315.2,
+      "changePct": 0.4,
+      "ema21": 4393.07,
+      "ema50": 4382.5,
+      "ema200": 4387.66,
+      "status21": "near",
+      "status50": "near",
+      "status200": "near"
     },
     "Crude Oil": {
-      "price": 95.92,
-      "changePct": 4.08,
-      "ema21": 94.51,
-      "ema50": 89.92,
-      "ema200": 82.32,
+      "price": 94.03,
+      "changePct": -0.61,
+      "ema21": 94.36,
+      "ema50": 90.03,
+      "ema200": 82.42,
       "status21": "near",
       "status50": "above",
       "status200": "above"
@@ -69,11 +69,11 @@
   },
   "watchlist": [
     {
-      "price": 1219.2,
-      "changePct": -2.31,
-      "ema21": 1263.11,
-      "ema50": 1284.47,
-      "ema200": 1340.29,
+      "price": 1226.0,
+      "changePct": 0.56,
+      "ema21": 1259.74,
+      "ema50": 1282.18,
+      "ema200": 1338.31,
       "status21": "below",
       "status50": "below",
       "status200": "below",
@@ -85,11 +85,11 @@
       "alert": false
     },
     {
-      "price": 728.9,
-      "changePct": -1.13,
-      "ema21": 722.33,
-      "ema50": 732.2,
-      "ema200": 797.12,
+      "price": 735.6,
+      "changePct": 0.92,
+      "ema21": 723.53,
+      "ema50": 732.34,
+      "ema200": 796.41,
       "status21": "near",
       "status50": "near",
       "status200": "below",
@@ -101,6 +101,6 @@
       "alert": true
     }
   ],
-  "marketSignal": "NO-GO",
+  "marketSignal": "GO",
   "alertCount": 1
 }
