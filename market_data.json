@@ -1,13 +1,13 @@
 {
-  "fetchedAt": "13 Nov 2026 17:57 UTC",
-  "fetchedAtIST": "13 Nov 2026 (IST \u2248 UTC+5:30)",
+  "fetchedAt": "16 Nov 2026 20:38 UTC",
+  "fetchedAtIST": "16 Nov 2026 (IST \u2248 UTC+5:30)",
   "indices": {
     "Nifty 50": {
       "price": 25144.3,
       "changePct": -0.61,
       "ema21": 23950.67,
-      "ema50": 23618.28,
-      "ema200": 24073.01,
+      "ema50": 23618.29,
+      "ema200": 24084.57,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -16,8 +16,8 @@
       "price": 61034.1,
       "changePct": -0.79,
       "ema21": 57326.47,
-      "ema50": 56577.45,
-      "ema200": 56823.89,
+      "ema50": 56577.48,
+      "ema200": 56873.88,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -28,8 +28,8 @@
       "price": 31931.15,
       "changePct": -0.72,
       "ema21": 31741.77,
-      "ema50": 30851.16,
-      "ema200": 31136.75,
+      "ema50": 30851.15,
+      "ema200": 31110.81,
       "status21": "near",
       "status50": "above",
       "status200": "above"
@@ -38,8 +38,8 @@
       "price": 27929.85,
       "changePct": -1.07,
       "ema21": 26740.63,
-      "ema50": 26671.88,
-      "ema200": 26961.26,
+      "ema50": 26671.89,
+      "ema200": 26969.21,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -48,8 +48,8 @@
       "price": 28535.75,
       "changePct": -0.49,
       "ema21": 27334.54,
-      "ema50": 26786.07,
-      "ema200": 25242.84,
+      "ema50": 26786.08,
+      "ema200": 25258.48,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -58,8 +58,8 @@
       "price": 46833.55,
       "changePct": -0.01,
       "ema21": 45433.28,
-      "ema50": 45563.79,
-      "ema200": 48347.4,
+      "ema50": 45563.82,
+      "ema200": 48384.92,
       "status21": "above",
       "status50": "above",
       "status200": "below"
@@ -69,7 +69,7 @@
       "changePct": -0.98,
       "ema21": 12369.37,
       "ema50": 12470.03,
-      "ema200": 12349.32,
+      "ema200": 12341.32,
       "status21": "above",
       "status50": "near",
       "status200": "above"
@@ -79,7 +79,7 @@
       "changePct": -1.39,
       "ema21": 861.22,
       "ema50": 853.74,
-      "ema200": 851.21,
+      "ema200": 851.51,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -88,8 +88,8 @@
       "price": 37399.05,
       "changePct": 0.03,
       "ema21": 36534.34,
-      "ema50": 36819.4,
-      "ema200": 37468.76,
+      "ema50": 36819.42,
+      "ema200": 37490.83,
       "status21": "above",
       "status50": "near",
       "status200": "near"
@@ -98,8 +98,8 @@
       "price": 9258.6,
       "changePct": -0.51,
       "ema21": 8557.46,
-      "ema50": 8412.99,
-      "ema200": 8446.91,
+      "ema50": 8413.0,
+      "ema200": 8463.26,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -109,7 +109,7 @@
       "changePct": -0.35,
       "ema21": 9123.16,
       "ema50": 9039.13,
-      "ema200": 9205.44,
+      "ema200": 9209.85,
       "status21": "above",
       "status50": "above",
       "status200": "above"
@@ -117,24 +117,24 @@
   },
   "commodities": {
     "Gold": {
-      "price": 3892.7,
-      "changePct": 0.19,
-      "ema21": 4043.63,
-      "ema50": 4143.09,
-      "ema200": 4326.44,
+      "price": 3860.4,
+      "changePct": -0.67,
+      "ema21": 4026.44,
+      "ema50": 4131.76,
+      "ema200": 4312.07,
       "status21": "below",
       "status50": "below",
       "status200": "below"
     },
     "Crude Oil": {
-      "price": 88.54,
-      "changePct": -0.23,
-      "ema21": 92.89,
-      "ema50": 93.05,
-      "ema200": 85.54,
+      "price": 85.6,
+      "changePct": -3.34,
+      "ema21": 92.23,
+      "ema50": 92.76,
+      "ema200": 85.64,
       "status21": "below",
       "status50": "below",
-      "status200": "above"
+      "status200": "near"
     }
   },
   "watchlist": [
@@ -143,7 +143,7 @@
       "changePct": 0.0,
       "ema21": 1268.79,
       "ema50": 1254.43,
-      "ema200": 1319.51,
+      "ema200": 1320.13,
       "status21": "above",
       "status50": "above",
       "status200": "near",
@@ -159,7 +159,7 @@
       "changePct": -1.02,
       "ema21": 746.13,
       "ema50": 732.53,
-      "ema200": 780.72,
+      "ema200": 781.55,
       "status21": "above",
       "status50": "above",
       "status200": "above",
